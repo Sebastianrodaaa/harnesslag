@@ -47,7 +47,7 @@ def summarize(runs):
         stale = [s for r in rs for s in r["steps"] if s.get("stale_items")]
         out["arms"][arm] = {
             "runs": len(rs), "complete": len(fin), "final_acc": fin, "final_mean_ci": ci95(fin) if fin else None,
-            "final_n": rs[0]["final"]["n"] if fin else None,
+            "final_n": next((r["final"]["n"] for r in rs if "final" in r), None),
             "curve_x": [e["fresh_rollouts"] for e in rs[0]["evals"]] if rs else [],
             "curve_mean": np.mean([c[:min(map(len, curves))] for c in curves], 0).tolist() if curves else [],
             "clip_share": float(np.mean([s["clip"] for s in stale if s.get("clip") is not None])) if stale else None,
@@ -152,15 +152,47 @@ def table(summ):
     return "\n".join(rows)
 
 
+def plot_method():
+    fig, ax = plt.subplots(figsize=(10, 3.4))
+    ax.axis("off")
+    ax.set_xlim(0, 10)
+    ax.set_ylim(0, 3.4)
+    box = dict(boxstyle="square,pad=0.45", fc="#000", ec="#fff", lw=1)
+    nodes = [(0.9, 2.6, "raw trace\nactions + tool results\n+ sampler log-probs"),
+             (0.9, 0.8, "old harness\nlog mu(old weights, old ctx)"),
+             (4.0, 2.6, "trainer, old ctx\nlog pi(old, old)"),
+             (4.0, 0.8, "trainer, old ctx\nlog pi(current, old)"),
+             (7.1, 1.7, "re-render under\ncurrent harness\nlog pi(current, new)")]
+    for x, y, t in nodes:
+        ax.text(x, y, t, ha="center", va="center", color="#fff", fontsize=8, bbox=box)
+    arr = dict(arrowstyle="->", color="#bbb", lw=1)
+    for (a, b), lab in [(((1.9, 0.8), (3.0, 2.5)), "numerics"), (((4.0, 2.15), (4.0, 1.25)), "policy lag"),
+                        (((5.05, 0.9), (6.05, 1.55)), "harness lag")]:
+        ax.annotate("", b, a, arrowprops=arr)
+        ax.text((a[0] + b[0]) / 2 + 0.12, (a[1] + b[1]) / 2, lab, color="#fff", fontsize=8, style="italic")
+    ax.text(9.95, 0.2, "sum of the three = total log-ratio, token by token\n"
+            "drop traces whose tool results change under the edit\n"
+            "D: center numerics, truncate exp(policy) and exp(harness) separately",
+            ha="right", va="bottom", color="#999", fontsize=7.5)
+    fig.savefig(os.path.join(SHOTS, "method.png"), dpi=150, bbox_inches="tight")
+    plt.close(fig)
+
+
 def main():
     runs = load()
     os.makedirs(SHOTS, exist_ok=True)
     summ = summarize(runs)
     json.dump(summ, open(os.path.join(RES, "summary.json"), "w"), indent=1)
     open(os.path.join(RES, "summary.md"), "w").write(table(summ) + "\n")
+    readme = os.path.join(ROOT, "README.md")
+    txt = open(readme).read()
+    a, b = "<!-- results:start -->", "<!-- results:end -->"
+    if a in txt and b in txt:
+        open(readme, "w").write(txt.split(a)[0] + a + "\n" + table(summ) + "\n" + b + txt.split(b)[1])
     plot_curves(runs, summ)
     plot_mismatch(runs, summ)
     plot_final(summ)
+    plot_method()
     print(table(summ))
     print(json.dumps(summ.get("hypothesis"), indent=1))
 
