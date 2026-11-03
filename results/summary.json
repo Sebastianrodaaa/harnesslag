@@ -1,0 +1,750 @@
+{
+ "arms": {
+  "A": {
+   "runs": 3,
+   "complete": 3,
+   "final_acc": [
+    0.01819560272934041,
+    0.01819560272934041,
+    0.01592115238817286
+   ],
+   "final_mean_ci": [
+    0.017437452615617893,
+    0.0032620566563276265
+   ],
+   "final_n": 1319,
+   "curve_x": [
+    0,
+    384,
+    768,
+    1152,
+    1536
+   ],
+   "curve_mean": [
+    0.005,
+    0.023333333333333334,
+    0.023333333333333334,
+    0.023333333333333334,
+    0.011666666666666667
+   ],
+   "clip_share": 0.010243853118469126,
+   "dropped_nonrenderable": 0,
+   "dropped_old_harness": 352,
+   "cpu_hours": 23.9139033639431,
+   "wall_hours": 11.95695168197155
+  },
+  "B": {
+   "runs": 3,
+   "complete": 3,
+   "final_acc": [
+    0.02350265352539803,
+    0.014404852160727824,
+    0.017437452615617893
+   ],
+   "final_mean_ci": [
+    0.01844831943391458,
+    0.011507454233661065
+   ],
+   "final_n": 1319,
+   "curve_x": [
+    0,
+    384,
+    768,
+    1152,
+    1536
+   ],
+   "curve_mean": [
+    0.005,
+    0.018333333333333333,
+    0.02,
+    0.02,
+    0.018333333333333333
+   ],
+   "clip_share": 0.0,
+   "dropped_nonrenderable": 0,
+   "dropped_old_harness": 0,
+   "cpu_hours": 20.09915216419432,
+   "wall_hours": 10.04957608209716
+  },
+  "C": {
+   "runs": 3,
+   "complete": 3,
+   "final_acc": [
+    0.025018953752843062,
+    0.016679302501895376,
+    0.017437452615617893
+   ],
+   "final_mean_ci": [
+    0.019711902956785446,
+    0.011455966484418809
+   ],
+   "final_n": 1319,
+   "curve_x": [
+    0,
+    384,
+    768,
+    1152,
+    1536
+   ],
+   "curve_mean": [
+    0.005,
+    0.018333333333333333,
+    0.021666666666666667,
+    0.03166666666666667,
+    0.02333333333333333
+   ],
+   "clip_share": 0.0,
+   "dropped_nonrenderable": 0,
+   "dropped_old_harness": 0,
+   "cpu_hours": 19.82579603075981,
+   "wall_hours": 9.912898015379906
+  },
+  "D": {
+   "runs": 3,
+   "complete": 3,
+   "final_acc": [
+    0.02577710386656558,
+    0.019711902956785442,
+    0.01819560272934041
+   ],
+   "final_mean_ci": [
+    0.02122820318423048,
+    0.009965747699237271
+   ],
+   "final_n": 1319,
+   "curve_x": [
+    0,
+    384,
+    768,
+    1152,
+    1536
+   ],
+   "curve_mean": [
+    0.005,
+    0.016666666666666666,
+    0.016666666666666666,
+    0.01,
+    0.02666666666666667
+   ],
+   "clip_share": 0.013667993680686651,
+   "dropped_nonrenderable": 0,
+   "dropped_old_harness": 0,
+   "cpu_hours": 20.3937378569444,
+   "wall_hours": 10.1968689284722
+  },
+  "E": {
+   "runs": 3,
+   "complete": 3,
+   "final_acc": [
+    0.02122820318423048,
+    0.01592115238817286,
+    0.01592115238817286
+   ],
+   "final_mean_ci": [
+    0.01769016932019207,
+    0.007611465531431135
+   ],
+   "final_n": 1319,
+   "curve_x": [
+    0,
+    384,
+    768,
+    1152,
+    1536
+   ],
+   "curve_mean": [
+    0.005,
+    0.023333333333333334,
+    0.018333333333333337,
+    0.016666666666666666,
+    0.011666666666666667
+   ],
+   "clip_share": 0.010215942319436028,
+   "dropped_nonrenderable": 0,
+   "dropped_old_harness": 0,
+   "cpu_hours": 20.39211259126663,
+   "wall_hours": 10.196056295633316
+  }
+ },
+ "seeds": [
+  0,
+  1,
+  2
+ ],
+ "edits": {
+  "0": [
+   {
+    "step": 12,
+    "harness": {
+     "system": 1,
+     "tool_format": "raw",
+     "error_reminder": false,
+     "answer_reminder": false,
+     "rounding": false
+    },
+    "edit": "system: 0 -> 1",
+    "base_mean": 0.11350000000000002,
+    "candidates": [
+     {
+      "harness": {
+       "system": 0,
+       "tool_format": "raw",
+       "error_reminder": false,
+       "answer_reminder": false,
+       "rounding": true
+      },
+      "edit": "rounding: False -> True",
+      "mean": 0.11350000000000002,
+      "delta": 0.0,
+      "p": 1.0
+     },
+     {
+      "harness": {
+       "system": 0,
+       "tool_format": "json",
+       "error_reminder": false,
+       "answer_reminder": false,
+       "rounding": false
+      },
+      "edit": "tool_format: raw -> json",
+      "mean": 0.11350000000000002,
+      "delta": 0.0,
+      "p": 1.0
+     },
+     {
+      "harness": {
+       "system": 0,
+       "tool_format": "raw",
+       "error_reminder": false,
+       "answer_reminder": true,
+       "rounding": false
+      },
+      "edit": "answer_reminder: False -> True",
+      "mean": 0.11350000000000002,
+      "delta": 0.0,
+      "p": 1.0
+     },
+     {
+      "harness": {
+       "system": 1,
+       "tool_format": "raw",
+       "error_reminder": false,
+       "answer_reminder": false,
+       "rounding": false
+      },
+      "edit": "system: 0 -> 1",
+      "mean": 0.134,
+      "delta": 0.02049999999999999,
+      "p": 0.05056741572157491
+     }
+    ],
+    "accepted": "system: 0 -> 1"
+   },
+   {
+    "step": 24,
+    "harness": null,
+    "edit": null,
+    "base_mean": 0.115,
+    "candidates": [
+     {
+      "harness": {
+       "system": 1,
+       "tool_format": "truncated",
+       "error_reminder": false,
+       "answer_reminder": false,
+       "rounding": false
+      },
+      "edit": "tool_format: raw -> truncated",
+      "mean": 0.115,
+      "delta": 0.0,
+      "p": 1.0
+     },
+     {
+      "harness": {
+       "system": 1,
+       "tool_format": "raw",
+       "error_reminder": true,
+       "answer_reminder": false,
+       "rounding": false
+      },
+      "edit": "error_reminder: False -> True",
+      "mean": 0.115,
+      "delta": 0.0,
+      "p": 1.0
+     },
+     {
+      "harness": {
+       "system": 1,
+       "tool_format": "json",
+       "error_reminder": false,
+       "answer_reminder": false,
+       "rounding": false
+      },
+      "edit": "tool_format: raw -> json",
+      "mean": 0.115,
+      "delta": 0.0,
+      "p": 1.0
+     },
+     {
+      "harness": {
+       "system": 1,
+       "tool_format": "raw",
+       "error_reminder": false,
+       "answer_reminder": true,
+       "rounding": false
+      },
+      "edit": "answer_reminder: False -> True",
+      "mean": 0.115,
+      "delta": 0.0,
+      "p": 1.0
+     }
+    ],
+    "accepted": null
+   },
+   {
+    "step": 36,
+    "harness": null,
+    "edit": null,
+    "base_mean": 0.11000000000000001,
+    "candidates": [
+     {
+      "harness": {
+       "system": 1,
+       "tool_format": "raw",
+       "error_reminder": false,
+       "answer_reminder": false,
+       "rounding": true
+      },
+      "edit": "rounding: False -> True",
+      "mean": 0.11000000000000001,
+      "delta": 0.0,
+      "p": 1.0
+     },
+     {
+      "harness": {
+       "system": 1,
+       "tool_format": "truncated",
+       "error_reminder": false,
+       "answer_reminder": false,
+       "rounding": false
+      },
+      "edit": "tool_format: raw -> truncated",
+      "mean": 0.11000000000000001,
+      "delta": 0.0,
+      "p": 1.0
+     },
+     {
+      "harness": {
+       "system": 1,
+       "tool_format": "json",
+       "error_reminder": false,
+       "answer_reminder": false,
+       "rounding": false
+      },
+      "edit": "tool_format: raw -> json",
+      "mean": 0.11000000000000001,
+      "delta": 0.0,
+      "p": 1.0
+     },
+     {
+      "harness": {
+       "system": 1,
+       "tool_format": "raw",
+       "error_reminder": false,
+       "answer_reminder": true,
+       "rounding": false
+      },
+      "edit": "answer_reminder: False -> True",
+      "mean": 0.11000000000000001,
+      "delta": 0.0,
+      "p": 1.0
+     }
+    ],
+    "accepted": null
+   }
+  ],
+  "1": [
+   {
+    "step": 12,
+    "harness": {
+     "system": 2,
+     "tool_format": "raw",
+     "error_reminder": false,
+     "answer_reminder": false,
+     "rounding": false
+    },
+    "edit": "system: 0 -> 2",
+    "base_mean": 0.10950000000000001,
+    "candidates": [
+     {
+      "harness": {
+       "system": 2,
+       "tool_format": "raw",
+       "error_reminder": false,
+       "answer_reminder": false,
+       "rounding": false
+      },
+      "edit": "system: 0 -> 2",
+      "mean": 0.12350000000000001,
+      "delta": 0.013999999999999999,
+      "p": 0.06004045651445304
+     },
+     {
+      "harness": {
+       "system": 0,
+       "tool_format": "raw",
+       "error_reminder": true,
+       "answer_reminder": false,
+       "rounding": false
+      },
+      "edit": "error_reminder: False -> True",
+      "mean": 0.10950000000000001,
+      "delta": 0.0,
+      "p": 1.0
+     },
+     {
+      "harness": {
+       "system": 1,
+       "tool_format": "raw",
+       "error_reminder": false,
+       "answer_reminder": false,
+       "rounding": false
+      },
+      "edit": "system: 0 -> 1",
+      "mean": 0.1105,
+      "delta": 0.000999999999999987,
+      "p": 0.46484703095276586
+     },
+     {
+      "harness": {
+       "system": 0,
+       "tool_format": "truncated",
+       "error_reminder": false,
+       "answer_reminder": false,
+       "rounding": false
+      },
+      "edit": "tool_format: raw -> truncated",
+      "mean": 0.10950000000000001,
+      "delta": 0.0,
+      "p": 1.0
+     }
+    ],
+    "accepted": "system: 0 -> 2"
+   },
+   {
+    "step": 24,
+    "harness": null,
+    "edit": null,
+    "base_mean": 0.12500000000000003,
+    "candidates": [
+     {
+      "harness": {
+       "system": 0,
+       "tool_format": "raw",
+       "error_reminder": false,
+       "answer_reminder": false,
+       "rounding": false
+      },
+      "edit": "system: 2 -> 0",
+      "mean": 0.11000000000000001,
+      "delta": -0.015000000000000013,
+      "p": 0.8710687528371382
+     },
+     {
+      "harness": {
+       "system": 2,
+       "tool_format": "json",
+       "error_reminder": false,
+       "answer_reminder": false,
+       "rounding": false
+      },
+      "edit": "tool_format: raw -> json",
+      "mean": 0.12500000000000003,
+      "delta": 0.0,
+      "p": 1.0
+     },
+     {
+      "harness": {
+       "system": 2,
+       "tool_format": "raw",
+       "error_reminder": false,
+       "answer_reminder": true,
+       "rounding": false
+      },
+      "edit": "answer_reminder: False -> True",
+      "mean": 0.12500000000000003,
+      "delta": 0.0,
+      "p": 1.0
+     },
+     {
+      "harness": {
+       "system": 2,
+       "tool_format": "raw",
+       "error_reminder": true,
+       "answer_reminder": false,
+       "rounding": false
+      },
+      "edit": "error_reminder: False -> True",
+      "mean": 0.12500000000000003,
+      "delta": 0.0,
+      "p": 1.0
+     }
+    ],
+    "accepted": null
+   },
+   {
+    "step": 36,
+    "harness": null,
+    "edit": null,
+    "base_mean": 0.13,
+    "candidates": [
+     {
+      "harness": {
+       "system": 2,
+       "tool_format": "raw",
+       "error_reminder": false,
+       "answer_reminder": true,
+       "rounding": false
+      },
+      "edit": "answer_reminder: False -> True",
+      "mean": 0.13,
+      "delta": 0.0,
+      "p": 1.0
+     },
+     {
+      "harness": {
+       "system": 2,
+       "tool_format": "json",
+       "error_reminder": false,
+       "answer_reminder": false,
+       "rounding": false
+      },
+      "edit": "tool_format: raw -> json",
+      "mean": 0.13,
+      "delta": 0.0,
+      "p": 1.0
+     },
+     {
+      "harness": {
+       "system": 1,
+       "tool_format": "raw",
+       "error_reminder": false,
+       "answer_reminder": false,
+       "rounding": false
+      },
+      "edit": "system: 2 -> 1",
+      "mean": 0.1295,
+      "delta": -0.0005000000000000004,
+      "p": 0.5125599454381821
+     },
+     {
+      "harness": {
+       "system": 0,
+       "tool_format": "raw",
+       "error_reminder": false,
+       "answer_reminder": false,
+       "rounding": false
+      },
+      "edit": "system: 2 -> 0",
+      "mean": 0.11000000000000001,
+      "delta": -0.01999999999999999,
+      "p": 0.9486944993324362
+     }
+    ],
+    "accepted": null
+   }
+  ],
+  "2": [
+   {
+    "step": 12,
+    "harness": null,
+    "edit": null,
+    "base_mean": 0.1225,
+    "candidates": [
+     {
+      "harness": {
+       "system": 0,
+       "tool_format": "raw",
+       "error_reminder": false,
+       "answer_reminder": false,
+       "rounding": true
+      },
+      "edit": "rounding: False -> True",
+      "mean": 0.1225,
+      "delta": 0.0,
+      "p": 1.0
+     },
+     {
+      "harness": {
+       "system": 1,
+       "tool_format": "raw",
+       "error_reminder": false,
+       "answer_reminder": false,
+       "rounding": false
+      },
+      "edit": "system: 0 -> 1",
+      "mean": 0.11900000000000001,
+      "delta": -0.0034999999999999892,
+      "p": 0.6096973994912646
+     },
+     {
+      "harness": {
+       "system": 0,
+       "tool_format": "raw",
+       "error_reminder": false,
+       "answer_reminder": true,
+       "rounding": false
+      },
+      "edit": "answer_reminder: False -> True",
+      "mean": 0.1225,
+      "delta": 0.0,
+      "p": 1.0
+     },
+     {
+      "harness": {
+       "system": 0,
+       "tool_format": "raw",
+       "error_reminder": true,
+       "answer_reminder": false,
+       "rounding": false
+      },
+      "edit": "error_reminder: False -> True",
+      "mean": 0.1225,
+      "delta": 0.0,
+      "p": 1.0
+     }
+    ],
+    "accepted": null
+   },
+   {
+    "step": 24,
+    "harness": null,
+    "edit": null,
+    "base_mean": 0.11000000000000001,
+    "candidates": [
+     {
+      "harness": {
+       "system": 0,
+       "tool_format": "truncated",
+       "error_reminder": false,
+       "answer_reminder": false,
+       "rounding": false
+      },
+      "edit": "tool_format: raw -> truncated",
+      "mean": 0.11000000000000001,
+      "delta": 0.0,
+      "p": 1.0
+     },
+     {
+      "harness": {
+       "system": 2,
+       "tool_format": "raw",
+       "error_reminder": false,
+       "answer_reminder": false,
+       "rounding": false
+      },
+      "edit": "system: 0 -> 2",
+      "mean": 0.12000000000000002,
+      "delta": 0.010000000000000009,
+      "p": 0.159262456159887
+     },
+     {
+      "harness": {
+       "system": 0,
+       "tool_format": "raw",
+       "error_reminder": false,
+       "answer_reminder": false,
+       "rounding": true
+      },
+      "edit": "rounding: False -> True",
+      "mean": 0.11000000000000001,
+      "delta": 0.0,
+      "p": 1.0
+     },
+     {
+      "harness": {
+       "system": 0,
+       "tool_format": "raw",
+       "error_reminder": true,
+       "answer_reminder": false,
+       "rounding": false
+      },
+      "edit": "error_reminder: False -> True",
+      "mean": 0.11000000000000001,
+      "delta": 0.0,
+      "p": 1.0
+     }
+    ],
+    "accepted": null
+   },
+   {
+    "step": 36,
+    "harness": null,
+    "edit": null,
+    "base_mean": 0.11000000000000001,
+    "candidates": [
+     {
+      "harness": {
+       "system": 0,
+       "tool_format": "raw",
+       "error_reminder": true,
+       "answer_reminder": false,
+       "rounding": false
+      },
+      "edit": "error_reminder: False -> True",
+      "mean": 0.11000000000000001,
+      "delta": 0.0,
+      "p": 1.0
+     },
+     {
+      "harness": {
+       "system": 2,
+       "tool_format": "raw",
+       "error_reminder": false,
+       "answer_reminder": false,
+       "rounding": false
+      },
+      "edit": "system: 0 -> 2",
+      "mean": 0.11850000000000001,
+      "delta": 0.008499999999999994,
+      "p": 0.19922069701977652
+     },
+     {
+      "harness": {
+       "system": 0,
+       "tool_format": "raw",
+       "error_reminder": false,
+       "answer_reminder": false,
+       "rounding": true
+      },
+      "edit": "rounding: False -> True",
+      "mean": 0.11000000000000001,
+      "delta": 0.0,
+      "p": 1.0
+     },
+     {
+      "harness": {
+       "system": 1,
+       "tool_format": "raw",
+       "error_reminder": false,
+       "answer_reminder": false,
+       "rounding": false
+      },
+      "edit": "system: 0 -> 1",
+      "mean": 0.12000000000000002,
+      "delta": 0.010000000000000009,
+      "p": 0.20779107855489687
+     }
+    ],
+    "accepted": null
+   }
+  ]
+ },
+ "hypothesis": {
+  "A_final_curve_acc": 0.011666666666666667,
+  "D_rollouts_to_match_A": 384,
+  "A_rollouts": 1536,
+  "rollout_saving": 0.75,
+  "D_minus_B_final_points": 0.27798837503159
+ }
+}

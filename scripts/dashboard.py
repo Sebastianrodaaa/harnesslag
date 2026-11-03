@@ -128,7 +128,7 @@ function render(){
    sel("D")[0]?sel("D")[0].steps.map(s=>s.reward/1.1):null);
  h+=kp("vs discard stale (A)",fd.length&&fa.length?(mean(fd)-mean(fa)>=0?"+":"")+f(mean(fd)-mean(fa))+" pt":"–",fa.length?`A = ${f(mean(fa))}% · B = ${fb.length?f(mean(fb)):"–"}%`:"running");
  const hy=S.hypothesis||{};
- h+=kp("fresh rollouts saved",hy.rollout_saving!=null?f(100*hy.rollout_saving,0)+"%":"none",hy.A_rollouts?`D reaches A's final curve acc at ${hy.D_rollouts_to_match_A??"never"} / ${hy.A_rollouts}`:"needs A and D curves");
+ h+=kp("fresh rollouts saved",hy.rollout_saving!=null?f(100*hy.rollout_saving,0)+"%":"none",hy.A_rollouts?`D reaches A's final curve acc at ${hy.D_rollouts_to_match_A??"never"} / ${hy.A_rollouts} · noisy n=200 curve, not significant`:"needs A and D curves");
  const ed=runs.filter(r=>r.arm==="A").flatMap(r=>r.edits);
  const tsec=runs.reduce((s,r)=>s+r.time.total*(r.config.threads||1),0);
  h+=kp("accepted harness edits",`${ed.filter(e=>e.harness).length}<span style="font-size:14px;color:#777"> / ${ed.length}</span>`,`edit points across ${runs.filter(r=>r.arm==="A").length} seeds · ${f(tsec/3600,1)} CPU-h total`);
