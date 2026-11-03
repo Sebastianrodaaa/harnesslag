@@ -81,7 +81,9 @@ def frame(r, upto, ntok):
     for e in json.load(open(os.path.join(RES, f"A_s{r['config']['seed']}.json")))["edits"]:
         if e["harness"]:
             ax.axvline(e["step"], color="#fff", lw=0.6, alpha=0.4)
+    pos = [s[k] for s in st for k in ("absn", "absp", "absh") if s.get(k)]
     ax.set_yscale("log")
+    ax.set_ylim(min(pos) * 0.8, max(pos) * 1.25)
     ax.set_xlim(0, len(st))
     ax.grid(color="#1a1a1a")
     ax.set_title("mean |term| on stale tokens (lines: harness edits)", fontsize=8, loc="left", color="#bbb")
