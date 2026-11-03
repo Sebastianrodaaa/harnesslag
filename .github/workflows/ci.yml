@@ -1,0 +1,22 @@
+name: ci
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: hf-smollm2-135m-instruct
+      - run: pip install torch --index-url https://download.pytorch.org/whl/cpu && pip install -r requirements.txt
+      - run: python -m py_compile harnesslag/*.py scripts/*.py
+      - run: bash -n scripts/run_cpu.sh scripts/full_scale_gpu.sh
+      - run: python test_harnesslag.py
